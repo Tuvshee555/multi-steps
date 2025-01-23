@@ -1,22 +1,30 @@
-export const Checker = ({ inputFields, inputValues, setErrors, setPage }) => {
+const Checker = ({ inputFields, inputValues, setErrors, setPage }) => {
   const handleSubmit = () => {
-    const formErrors = {};
+    const errors = {};
     let isValid = true;
 
     inputFields.forEach(({ id, label }) => {
-      if (!inputValues[id]) {
-        formErrors[id] = `${label} is required!`;
+      const value = inputValues[id];
+
+      if (!value) {
+        errors[id] = `${label} is required!`;
+        isValid = false;
+      } else if (
+        (id === "Email" && (!value.includes("@") || !value.includes("."))) ||
+        (id === "Phone number" && value.length !== 8) ||
+        (id === "Password" && value.length < 6) ||
+        (id === "Confirm password" && value !== inputValues["Password"])
+      ) {
+        errors[id] = `${label} is invalid!`;
         isValid = false;
       }
     });
 
-    setErrors(formErrors);
-
+    setErrors(errors);
     if (isValid) {
-      alert("Form submitted successfully!");
-      setPage(2); // Use setPage to navigate to the next page (PageTwo)
+      setPage(2); // Navigate to the next page
     } else {
-      alert("Please fill all the fields!");
+      alert("Please correct the errors and try again!");
     }
   };
 
@@ -34,4 +42,5 @@ export const Checker = ({ inputFields, inputValues, setErrors, setPage }) => {
     </div>
   );
 };
- 
+
+export default Checker;
