@@ -11,7 +11,9 @@ const PageThird = ({ setPage }) => {
       <div className="flex w-[480px] p-8 flex-col items-start rounded-lg bg-white">
         <Header />
         <BirthDate/>
-        <Photo />
+        <Photo 
+        setPage={setPage}
+        />
       </div>
     </div>
   );

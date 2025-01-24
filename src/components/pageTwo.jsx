@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Continue from "./Continue";
-import Checker from "./Cheker";
+import Checker2 from "./Cheker2";
 
 const inputFields = [
   { id: "Email", label: "Email", placeholder: "Enter your email" },
-  { id: "Phone number", label: "Phone Number", placeholder: "Enter your phone number" },
+  {
+    id: "Phone number",
+    label: "Phone Number",
+    placeholder: "Enter your phone number",
+  },
   { id: "Password", label: "Password", placeholder: "Enter your password" },
-  { id: "Confirm password", label: "Confirm Password", placeholder: "Confirm your password" },
+  {
+    id: "Confirm password",
+    label: "Confirm Password",
+    placeholder: "Confirm your password",
+  },
 ];
 
 const PageTwo = ({ setPage }) => {
@@ -26,7 +34,7 @@ const PageTwo = ({ setPage }) => {
           setInputValues={setInputValues}
           errors={errors}
         />
-        <Checker
+        <Checker2
           inputFields={inputFields}
           inputValues={inputValues}
           setErrors={setErrors}
