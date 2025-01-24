@@ -16,7 +16,6 @@ export default function Home() {
       {page === 2 && <PageTwo setPage={setPage} />}
       {page === 3 && <PageThird setPage={setPage} />}
       {page === 4 && <PageLast setPage={setPage} />}
-
     </>
   );
 }

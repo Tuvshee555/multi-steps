@@ -10,14 +10,12 @@ export const BirthDate = () => {
     const selectedDate = e.target.value;
     setBirthDate(selectedDate);
 
-    // Get the current date and calculate age
     const currentDate = new Date();
     const birth = new Date(selectedDate);
     const age = currentDate.getFullYear() - birth.getFullYear();
     const month = currentDate.getMonth() - birth.getMonth();
     const day = currentDate.getDate() - birth.getDate();
 
-    // If the person is under 18, show an error
     if (age < 18 || (age === 18 && (month < 0 || (month === 0 && day < 0)))) {
       setError("You must be 18 years or older.");
     } else {
@@ -27,7 +25,10 @@ export const BirthDate = () => {
 
   return (
     <div className="flex flex-col items-start gap-[8px] w-[100%] mb-[18px]">
-      <label htmlFor="birth-date" className="text-[#334155] text-[14px] font-[600]">
+      <label
+        htmlFor="birth-date"
+        className="text-[#334155] text-[14px] font-[600]"
+      >
         Date of Birth
       </label>
       <input

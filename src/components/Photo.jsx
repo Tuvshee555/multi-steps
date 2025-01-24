@@ -33,7 +33,13 @@ export const Photo = ({ setPage }) => {
           error ? "border-red-500" : "border-gray-300"
         }`}
       />
-      {photo && <img src={photo} alt="Preview" className="mt-4 w-full h-44 object-cover rounded" />}
+      {photo && (
+        <img
+          src={photo}
+          alt="Preview"
+          className="mt-4 w-full h-44 object-cover rounded"
+        />
+      )}
       {error && <p className="text-red-500 text-sm">Please upload a photo.</p>}
       <button
         className="bg-blue-500 text-white font-bold py-2 px-4 rounded w-full mt-4"
