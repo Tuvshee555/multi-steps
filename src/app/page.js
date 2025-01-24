@@ -3,7 +3,7 @@
 import PageOne from "@/components/PageOne";
 import PageTwo from "@/components/pageTwo";
 import PageThird from "@/components/PageThird";
-import { pageLast } from "@/components/pageLast";
+import { PageLast } from "@/components/pageLast";
 
 import { useState } from "react";
 
@@ -15,7 +15,7 @@ export default function Home() {
       {page === 1 && <PageOne setPage={setPage} />}
       {page === 2 && <PageTwo setPage={setPage} />}
       {page === 3 && <PageThird setPage={setPage} />}
-      {page === 4 && <pageLast setPage={setPage} />}
+      {page === 4 && <PageLast setPage={setPage} />}
 
     </>
   );
