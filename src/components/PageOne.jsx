@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Continue from "./Continue";
-import Checker from "./Cheker";
+import { ValidateInfo } from "./Validate-info";
+
 
 const inputFields = [
   {
@@ -17,7 +18,7 @@ const inputFields = [
   { id: "username", label: "Username *", placeholder: "Enter your username" },
 ];
 
-const PageOne = ({ setPage }) => {
+export const PageOne = ({ setPage }) => {
   const [inputValues, setInputValues] = useState(
     inputFields.reduce((acc, { id }) => ({ ...acc, [id]: "" }), {}),
   );
@@ -33,7 +34,7 @@ const PageOne = ({ setPage }) => {
           setInputValues={setInputValues}
           errors={errors}
         />
-        <Checker
+        <ValidateInfo
           inputFields={inputFields}
           inputValues={inputValues}
           setErrors={setErrors}
@@ -44,4 +45,3 @@ const PageOne = ({ setPage }) => {
   );
 };
 
-export default PageOne;

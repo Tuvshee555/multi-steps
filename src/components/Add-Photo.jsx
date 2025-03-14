@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export const Photo = ({ setPage }) => {
+export const AddPhoto = ({ setPage }) => {
   const [photo, setPhoto] = useState(null);
   const [error, setError] = useState(false);
 
@@ -25,21 +25,22 @@ export const Photo = ({ setPage }) => {
 
   return (
     <div className="w-full">
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
-        className={`h-44 bg-gray-100 w-full rounded border ${
-          error ? "border-red-500" : "border-gray-300"
-        }`}
-      />
-      {photo && (
+     
+      {photo ? (
         <img
           src={photo}
           alt="Preview"
           className="mt-4 w-full h-44 object-cover rounded"
         />
-      )}
+      ) : 
+      <input
+      type="file"
+      accept="image/*"
+      onChange={handleFileChange}
+      className={`h-44 bg-gray-100 w-full rounded border ${
+        error ? "border-red-500" : "border-gray-300"
+      }`}
+    />}
       {error && <p className="text-red-500 text-sm">Please upload a photo.</p>}
       <button
         className="bg-blue-500 text-white font-bold py-2 px-4 rounded w-full mt-4"

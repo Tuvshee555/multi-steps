@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export const BirthDate = () => {
+export const BirthDay = () => {
   const [birthDate, setBirthDate] = useState("");
   const [error, setError] = useState("");
 

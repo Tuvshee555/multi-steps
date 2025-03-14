@@ -1,4 +1,4 @@
-const Checker = ({ inputFields, inputValues, setErrors, setPage }) => {
+export const ValidateInfo = ({ inputFields, inputValues, setErrors, setPage }) => {
   const handleSubmit = () => {
     const errors = {};
     let isValid = true;
@@ -43,4 +43,4 @@ const Checker = ({ inputFields, inputValues, setErrors, setPage }) => {
   );
 };
 
-export default Checker;
+

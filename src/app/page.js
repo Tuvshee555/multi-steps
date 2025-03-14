@@ -1,8 +1,8 @@
 "use client";
 
-import PageOne from "@/components/PageOne";
+import { PageOne } from "@/components/PageOne";
 import PageTwo from "@/components/pageTwo";
-import PageThird from "@/components/PageThird";
+import { PageThird } from "@/components/PageThird";
 import { PageLast } from "@/components/pageLast";
 
 import { useState } from "react";
